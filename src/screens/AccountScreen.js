@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { View, StyleSheet, Text } from 'react-native';
+import { FontAwesome } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-navigation';
 import { Button } from 'react-native-elements';
 import Spacer from '../components/Spacer';
@@ -20,6 +21,11 @@ function AccountScreen(props) {
     </SafeAreaView>
   );
 }
+
+AccountScreen.navigationOptions = {
+  title: 'Account',
+  tabBarIcon: <FontAwesome name='gear' size={20} />,
+};
 
 const styles = StyleSheet.create({
   container: {},

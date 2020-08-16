@@ -7,7 +7,6 @@ import {
 
 export default (shouldTrack, callback) => {
   const [err, setErr] = useState(null);
-  // const [subscriber, setSubscriber] = useState(null);
 
   useEffect(() => {
     let subscriber;
