@@ -1,7 +1,7 @@
-import '../_mockLocation';
+//import '../_mockLocation';
 import React, { useContext, useCallback } from 'react';
-import { StyleSheet } from 'react-native';
-import { Text } from 'react-native-elements';
+import { Text, StyleSheet, View } from 'react-native';
+//import { Text } from 'react-native-elements';
 import { SafeAreaView, withNavigationFocus } from 'react-navigation';
 import { FontAwesome } from '@expo/vector-icons';
 import Map from '../components/Map';
@@ -22,8 +22,10 @@ function TrackCreateScreen({ isFocused }) {
 
   return (
     <SafeAreaView style={styles.container} forceInset={{ top: 'always' }}>
-      <Text h3>Create a Track</Text>
-      <Map />
+      <Text style={styles.text}>Create a Track</Text>
+      <View style={styles.map}>
+        <Map />
+      </View>
       {err ? <Text>Please enable location services</Text> : null}
       <TrackForm />
     </SafeAreaView>
@@ -36,6 +38,14 @@ TrackCreateScreen.navigationOptions = {
 };
 const styles = StyleSheet.create({
   container: {},
+  text: {
+    textAlign: 'center',
+    padding: 20,
+    fontSize: 20,
+  },
+  map: {
+    padding: 10,
+  },
 });
 
 export default withNavigationFocus(TrackCreateScreen);

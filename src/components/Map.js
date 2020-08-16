@@ -17,18 +17,18 @@ function Map(props) {
       style={styles.map}
       initialRegion={{
         ...currentLocation.coords,
-        latitudeDelta: 0.01,
-        longitudeDelta: 0.01,
+        longitudeDelta: 0.002,
+        latitudeDelta: 0.002,
       }}
       region={{
         ...currentLocation.coords,
-        latitudeDelta: 0.01,
-        longitudeDelta: 0.01,
+        longitudeDelta: 0.002,
+        latitudeDelta: 0.002,
       }}
     >
       <Circle
         center={currentLocation.coords}
-        radius={30}
+        radius={5}
         strokeColor='rgba(158,158,255,1.0)'
         fillColor='rgba(158,158,255,0.3)'
       />

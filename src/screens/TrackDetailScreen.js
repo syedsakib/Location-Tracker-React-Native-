@@ -12,17 +12,21 @@ const TrackDetailScreen = ({ navigation }) => {
 
   return (
     <>
-      <Text style={{ fontSize: 48 }}>{track.name}</Text>
-      <MapView
-        initialRegion={{
-          longitudeDelta: 0.01,
-          latitudeDelta: 0.01,
-          ...initialCoords,
-        }}
-        style={styles.map}
-      >
-        <Polyline coordinates={track.locations.map((loc) => loc.coords)} />
-      </MapView>
+      <Text style={{ textAlign: 'center', padding: 20, fontSize: 20 }}>
+        {track.name}
+      </Text>
+      <View style={styles.mapView}>
+        <MapView
+          initialRegion={{
+            longitudeDelta: 0.001,
+            latitudeDelta: 0.001,
+            ...initialCoords,
+          }}
+          style={styles.map}
+        >
+          <Polyline coordinates={track.locations.map((loc) => loc.coords)} />
+        </MapView>
+      </View>
     </>
   );
 };
@@ -30,6 +34,9 @@ const TrackDetailScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   map: {
     height: 300,
+  },
+  mapView: {
+    padding: 10,
   },
 });
 
